@@ -5,15 +5,101 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:id="@+id/imgLogoLogin"
+        android:layout_width="312dp"
+        android:layout_height="179dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="443dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homesense_logo" />
+
+    <EditText
+        android:id="@+id/txtUserLogin"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="369dp"
+        android:background="@drawable/rounded_corner"
+        android:drawableLeft="@drawable/username_ic"
+        android:drawablePadding="12dp"
+        android:paddingLeft="10dp"
+        android:ems="10"
+        android:hint="Enter Username..."
+        android:inputType="text"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPassLogin"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="295dp"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/rounded_corner"
+        android:drawableLeft="@drawable/password_ic"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Enter Password..."
+        android:inputType="text"
+        android:text=""
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="474dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="204dp"
+        android:backgroundTint="#2158df"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="543dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="135dp"
+        android:backgroundTint="#749cff"
+        android:text="Register"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
