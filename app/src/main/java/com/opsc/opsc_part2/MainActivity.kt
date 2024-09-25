@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -61,9 +62,19 @@ class MainActivity : AppCompatActivity() {
 
         val btnlogin: Button = findViewById(R.id.btnLogin)
         val btnregister: Button = findViewById(R.id.btnRegisterLogin)
+        var txtusername: EditText = findViewById(R.id.txtUserLogin)
+        var txtpassword: EditText = findViewById(R.id.txtPassLogin)
 
         btnlogin.setOnClickListener {
-            navigateToDashboard()
+
+            if (txtusername.text.toString().equals("") || txtpassword.text.toString().equals("")) {
+                Toast(this).showCustomToast("Please enter all fields!", this)
+            }
+            else
+            {
+                Toast(this).showCustomToast("Logged in successfully", this)
+                navigateToDashboard()
+            }
         }
 
         btnregister.setOnClickListener {
