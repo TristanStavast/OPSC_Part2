@@ -22,7 +22,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             app:cardElevation="20dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="5dp">
 
             <RelativeLayout
                 android:id="@+id/buttonClickParent"
@@ -36,7 +36,7 @@
                     android:id="@+id/btnAccentBorder"
                     android:layout_width="4dp"
                     android:layout_height="match_parent"
-                    android:background="#BCCFFE"/>
+                    android:background="#2158df"/>
 
                 <TextView
                     android:id="@+id/toastText"
