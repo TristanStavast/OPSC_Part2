@@ -1,23 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnSettings"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp">
+
+        <TextView
+            android:id="@+id/dashboardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textSize="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_centerHorizontal="true"/>
+
+<!--        <Button-->
+<!--            android:id="@+id/btnSettings"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/lightbulb"-->
+<!--        />-->
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="183dp"
-        android:layout_marginTop="315dp"
-        android:layout_marginEnd="127dp"
-        android:layout_marginBottom="368dp"
-        android:text="Settings"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Welcome back, Alexi!"
+        android:textSize="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/lightsButton"
+            android:layout_width="100dp"
+            android:layout_height="125dp"
+            android:backgroundTint="#749cff"
+            android:drawableTop="@drawable/lightbulb"
+            android:text="lights"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/doorsButton"
+            android:layout_width="100dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#749cff"
+            android:drawableTop="@drawable/door"
+            android:text="doors"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/sensorsButton"
+            android:layout_width="100dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#749cff"
+            android:drawableTop="@drawable/sensors"
+            android:text="sensor"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/lockdownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="280dp"
+        android:backgroundTint="#FF0000"
+        android:drawableTop="@drawable/power"
+        android:text="lockdown"
+        android:textColor="@color/black" />
+</LinearLayout>

@@ -14,11 +14,11 @@ class Dashboard : BaseActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_dashboard)
 
-        val btnsettings = findViewById<Button>(R.id.btnSettings)
-
-        btnsettings.setOnClickListener {
-            val int = Intent(this, Settings::class.java)
-            startActivity(int)
-        }
+//        val btnsettings = findViewById<Button>(R.id.btnSettings)
+//
+//        btnsettings.setOnClickListener {
+//            val int = Intent(this, Settings::class.java)
+//            startActivity(int)
+//        }
     }
 }
