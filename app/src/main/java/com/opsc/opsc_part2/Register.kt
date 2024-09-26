@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.Firebase
 import com.google.firebase.database.database
 
-class Register : AppCompatActivity() {
+class Register : BaseActivity() {
 
     //Companion object for database
     companion object

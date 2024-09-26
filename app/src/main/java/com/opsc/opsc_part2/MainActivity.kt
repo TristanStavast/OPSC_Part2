@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     //Private declarations
     private var cancellationSignal : CancellationSignal? = null

@@ -5,23 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imgLogoLogin"
-        android:layout_width="312dp"
-        android:layout_height="179dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="443dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homesense_logo"
-        tools:srcCompat="@drawable/homesense_whole_logo" />
 
     <EditText
         android:id="@+id/txtUserLogin"
@@ -39,7 +23,6 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         android:text=""
-        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,6 +100,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgLogHeading"
+        android:layout_width="282dp"
+        android:layout_height="253dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="428dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homesense_whole_logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
