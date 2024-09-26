@@ -9,14 +9,12 @@
 
     <ImageView
         android:id="@+id/imgBackSettings"
-        android:layout_width="415dp"
-        android:layout_height="273dp"
-        android:layout_marginBottom="479dp"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
         android:foregroundGravity="top"
         android:src="@drawable/wave_homesense"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="-7dp" />
 
     <TextView
         android:id="@+id/lblSettingsHeading"

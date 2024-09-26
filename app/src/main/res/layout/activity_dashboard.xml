@@ -1,97 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="15dp">
-
-        <TextView
-            android:id="@+id/dashboardTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textSize="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"/>
-
-<!--        <Button-->
-<!--            android:id="@+id/btnSettings"-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:background="@drawable/lightbulb"-->
-<!--        />-->
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imgBackDashboard"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
+        android:foregroundGravity="top"
+        android:src="@drawable/wave_homesense"
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="-7dp" />
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/dashboardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome back, Alexi!"
-        android:textSize="35dp"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp" />
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="611dp"
+        android:text="DASHBOARD"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imgSettingsDash"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="332dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="649dp"
+        android:clickable="true"
+        android:src="@drawable/settings_ic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtWelcome"
         android:layout_width="wrap_content"
-        android:layout_height="125dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/lightsButton"
-            android:layout_width="100dp"
-            android:layout_height="125dp"
-            android:backgroundTint="#749cff"
-            android:drawableTop="@drawable/lightbulb"
-            android:text="lights"
-            android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/doorsButton"
-            android:layout_width="100dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="#749cff"
-            android:drawableTop="@drawable/door"
-            android:text="doors"
-            android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/sensorsButton"
-            android:layout_width="100dp"
-            android:layout_height="125dp"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="#749cff"
-            android:drawableTop="@drawable/sensors"
-            android:text="sensor"
-            android:textColor="@color/black" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="561dp"
+        android:text="Welcome back, Alexi!"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/lockdownButton"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="583dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="13dp"
         android:backgroundTint="#FF0000"
         android:drawableTop="@drawable/power"
         android:text="lockdown"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLights"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginBottom="421dp"
+        android:backgroundTint="#749cff"
+        android:drawableTop="@drawable/lightbulb"
+        android:text="lights"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDoors"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="420dp"
+        android:backgroundTint="#749cff"
+        android:drawableTop="@drawable/door"
+        android:text="doors"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSensors"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="421dp"
+        android:backgroundTint="#749cff"
+        android:drawableTop="@drawable/sensors"
+        android:text="sensor"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
