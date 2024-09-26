@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+
+    <ImageView
+        android:id="@+id/imgBackRegister"
+        android:layout_width="415dp"
+        android:layout_height="273dp"
+        android:layout_marginBottom="479dp"
+        android:foregroundGravity="top"
+        android:src="@drawable/wave_homesense"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/imgRegHeading"
         android:layout_width="282dp"
