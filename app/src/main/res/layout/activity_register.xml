@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/btnRegister"
@@ -81,7 +82,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homesense_logo" />
+        app:srcCompat="@drawable/homesense_logo"
+        tools:srcCompat="@drawable/homesense_whole_logo" />
 
     <EditText
         android:id="@+id/txtConfirmPassword"

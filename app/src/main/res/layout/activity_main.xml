@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homesense_logo" />
+        app:srcCompat="@drawable/homesense_logo"
+        tools:srcCompat="@drawable/homesense_whole_logo" />
 
     <EditText
         android:id="@+id/txtUserLogin"

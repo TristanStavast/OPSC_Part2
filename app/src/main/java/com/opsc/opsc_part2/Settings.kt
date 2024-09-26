@@ -1,24 +1,27 @@
 package com.opsc.opsc_part2
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Dashboard : AppCompatActivity() {
+class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.activity_settings)
 
-        val btnsettings = findViewById<Button>(R.id.btnSettings)
+       val imgHomeSense = findViewById<ImageView>(R.id.imgHomeSense)
 
-        btnsettings.setOnClickListener {
-            val int = Intent(this, Settings::class.java)
+        imgHomeSense.setOnClickListener {
+            val int = Intent(this, Dashboard::class.java)
             startActivity(int)
         }
+
     }
 }
