@@ -12,6 +12,7 @@ class PreferencesHelper(context: Context)
         const val THEME_KEY = "current_theme"
         const val LIGHT_MODE = "light"
         const val DARK_MODE = "dark"
+        const val NOTIFICATION_KEY = "notifications_enabled"
     }
 
     fun setTheme(theme : String)
@@ -22,5 +23,14 @@ class PreferencesHelper(context: Context)
     fun getTheme() : String?
     {
         return sharedPreferences.getString(THEME_KEY, LIGHT_MODE)
+    }
+
+    fun setNotificationsEnabled(enabled : Boolean)
+    {
+        sharedPreferences.edit().putBoolean(NOTIFICATION_KEY, enabled).apply()
+    }
+    fun areNotificationsEnabled() : Boolean
+    {
+        return sharedPreferences.getBoolean(NOTIFICATION_KEY, true)
     }
 }
