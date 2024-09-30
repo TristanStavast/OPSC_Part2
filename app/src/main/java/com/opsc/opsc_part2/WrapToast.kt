@@ -16,7 +16,7 @@ fun Toast.showCustomToast(message : String, activity: Activity)
     txtView.text = message
 
     this.apply {
-        setGravity(Gravity.BOTTOM, 0, 40)
+        setGravity(Gravity.TOP, 0, 40)
         duration = Toast.LENGTH_SHORT
         view = layout
         show()

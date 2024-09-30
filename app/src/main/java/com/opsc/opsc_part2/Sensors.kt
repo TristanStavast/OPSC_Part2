@@ -2,6 +2,8 @@ package com.opsc.opsc_part2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
+import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,11 +16,23 @@ class Sensors : BaseActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_sensors)
 
-    val imghomesensors = findViewById<ImageView>(R.id.imgHomeSensors)
-        imghomesensors.setOnClickListener {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+
+        val imghomedash : ImageView = findViewById(R.id.imgHomeSensors)
+        imghomedash.setOnClickListener {
             val int = Intent(this, Dashboard::class.java)
             startActivity(int)
         }
+
+        val ring : Button = findViewById(R.id.ringbuzzer)
+
+        ring.setOnClickListener {
+
+        }
+
 
     }
 }

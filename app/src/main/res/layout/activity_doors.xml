@@ -45,17 +45,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Switch
-        android:id="@+id/swtchDoor"
+    <Button
+        android:id="@+id/btnOpenDoor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="601dp"
-        android:switchPadding="20dp"
-        android:text="Front Door"
-        android:textSize="25dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="596dp"
+        android:backgroundTint="#2158df"
+        android:text="Open door"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

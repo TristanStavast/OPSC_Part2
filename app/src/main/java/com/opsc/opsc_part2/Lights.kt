@@ -2,6 +2,7 @@ package com.opsc.opsc_part2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +15,11 @@ class Lights : BaseActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_lights)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         val imghomelights = findViewById<ImageView>(R.id.imgHomeLights)
         val swtchoutsidelight = findViewById<Switch>(R.id.swtchOutsideLight)

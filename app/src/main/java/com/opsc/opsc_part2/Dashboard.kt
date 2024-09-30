@@ -9,6 +9,7 @@ import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -19,12 +20,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.opsc.opsc_part2.MainActivity.Companion.username
 
 class Dashboard : BaseActivity() {
 
     private var cancellationSignal : CancellationSignal? = null
     private var isAuthenticated = false
-
 
     private val authenticationCallback : BiometricPrompt.AuthenticationCallback
         get() = @RequiresApi(Build.VERSION_CODES.P)
@@ -42,6 +43,11 @@ class Dashboard : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         val imgsettings = findViewById<ImageView>(R.id.imgSettingsDash)
         val txtwelcome = findViewById<TextView>(R.id.txtWelcome)
@@ -68,9 +74,7 @@ class Dashboard : BaseActivity() {
             startActivity(int)
         }
 
-        txtwelcome.setText("Welcome back, " /* add user firstname from database */)
-
-
+        txtwelcome.setText("Welcome back, " + username)
 
         btnlights.setOnClickListener {
             val int = Intent(this, Lights::class.java)

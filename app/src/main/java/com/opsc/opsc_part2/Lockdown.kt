@@ -9,6 +9,7 @@ import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -30,7 +31,7 @@ class Lockdown : BaseActivity() {
                 notifyUser("Authentication Error : $errString")
             }
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
-                notifyUser("Lockdown Successful")
+                notifyUser("Stopped Lockdown")
                 isAuthenticated = true
                 navigatetodash()
             }
@@ -39,6 +40,11 @@ class Lockdown : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lockdown)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         val btnStopLockdown = findViewById<Button>(R.id.btnStopLockdown)
         btnStopLockdown.setOnClickListener {
@@ -55,7 +61,6 @@ class Lockdown : BaseActivity() {
 
             biometricPrompt.authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
         }
-
     }
 
     private fun getCancellationSignal() : CancellationSignal {
@@ -65,6 +70,7 @@ class Lockdown : BaseActivity() {
         }
         return cancellationSignal as CancellationSignal
     }
+
     @RequiresApi(Build.VERSION_CODES.M)
     private fun checkBiometricSupport(): Boolean {
         val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
@@ -73,7 +79,7 @@ class Lockdown : BaseActivity() {
             return false
         }
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
-            notifyUser("Fingerprint login is not enabled")
+            notifyUser("Fingerprint authentication is not enabled")
             return false
         }
         return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
@@ -86,6 +92,8 @@ class Lockdown : BaseActivity() {
         val int = Intent(this, Dashboard::class.java)
         startActivity(int)
     }
+
+    override fun onBackPressed() {}
 }
 
 

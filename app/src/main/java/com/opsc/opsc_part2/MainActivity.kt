@@ -38,6 +38,7 @@ class MainActivity : BaseActivity() {
         val dbHS = Firebase.database
         val userList = mutableListOf<Users>()
         var SignedIn : Int = -1
+        var username : String = ""
     }
 
     //Biometric authentication callback object

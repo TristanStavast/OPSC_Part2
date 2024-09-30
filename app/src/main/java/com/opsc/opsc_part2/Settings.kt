@@ -3,10 +3,12 @@ package com.opsc.opsc_part2
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.media.Image
 import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -30,6 +32,11 @@ class Settings : BaseActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         createNotificationChannel()
         val themeSwitch: Switch = findViewById(R.id.swtchDarkMode)
@@ -62,7 +69,7 @@ class Settings : BaseActivity() {
                     "You will receive notifications from now on."
                 )
             } else {
-
+                cancelNotification()
             }
         }
 
@@ -110,5 +117,9 @@ class Settings : BaseActivity() {
         {
             notify(NOTIFICATION_ID, builder.build())
         }
+    }
+    private fun cancelNotification() {
+        val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.cancel(NOTIFICATION_ID)  // Cancel the notification by its ID
     }
 }
