@@ -15,4 +15,35 @@
         android:src="@drawable/wave_homesense"
         tools:layout_editor_absoluteX="-7dp"
         tools:layout_editor_absoluteY="-7dp" />
+
+    <ImageView
+        android:id="@+id/imgHomeSensors"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginBottom="688dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homesense_both" />
+
+    <TextView
+        android:id="@+id/txtSensorsHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="688dp"
+        android:text="Sensors"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.content.Intent
 import android.media.Image
 import android.os.Build
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Switch
@@ -70,6 +71,12 @@ class Settings : BaseActivity() {
 
         imgHomeSense.setOnClickListener {
             val int = Intent(this, Dashboard::class.java)
+            startActivity(int)
+        }
+
+        val btnLogout: Button = findViewById(R.id.btnLogout)
+        btnLogout.setOnClickListener {
+            val int = Intent(this, MainActivity::class.java)
             startActivity(int)
         }
 
