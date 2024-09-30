@@ -16,6 +16,7 @@ class Lights : BaseActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_lights)
 
+        //Setting window flags
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS

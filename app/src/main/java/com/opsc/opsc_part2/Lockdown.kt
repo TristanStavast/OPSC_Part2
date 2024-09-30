@@ -24,6 +24,7 @@ class Lockdown : BaseActivity() {
     private var cancellationSignal : CancellationSignal? = null
     private var isAuthenticated = false
 
+    //Authentication callback
     private val authenticationCallback : BiometricPrompt.AuthenticationCallback
         get() = @RequiresApi(Build.VERSION_CODES.P)
         object : BiometricPrompt.AuthenticationCallback() {
@@ -41,11 +42,13 @@ class Lockdown : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lockdown)
 
+        //Setting window flags
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
+        //Button to stop lockdown with fingerprint
         val btnStopLockdown = findViewById<Button>(R.id.btnStopLockdown)
         btnStopLockdown.setOnClickListener {
             val biometricPrompt = BiometricPrompt.Builder(this)
@@ -63,6 +66,7 @@ class Lockdown : BaseActivity() {
         }
     }
 
+    //Method for cancellation of fingerprint authentication
     private fun getCancellationSignal() : CancellationSignal {
         cancellationSignal = CancellationSignal()
         cancellationSignal?.setOnCancelListener {
@@ -85,9 +89,11 @@ class Lockdown : BaseActivity() {
         return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
     }
 
+    //Method to notify user
     private fun notifyUser(message: String) {
         Toast(this).showCustomToast(message, this)
     }
+    //Method to navigate to dashboard
     private fun navigatetodash() {
         val int = Intent(this, Dashboard::class.java)
         startActivity(int)

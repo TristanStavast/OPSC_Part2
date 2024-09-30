@@ -53,8 +53,8 @@
         android:layout_marginTop="83dp"
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="600dp"
-        android:text="Ring Buzzer"
         android:backgroundTint="#2158df"
+        android:text="Ring Buzzer"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,18 +116,12 @@
         android:id="@+id/swtchPhotocell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="500dp"
         android:switchPadding="7dp"
-        android:text="Photcell"
+        android:text="Photocell"
         android:textAllCaps="true"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="204dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

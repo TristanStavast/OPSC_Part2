@@ -32,6 +32,7 @@ class Register : BaseActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
+        //Declaring variables
         val btnregister : Button = findViewById(R.id.btnRegister)
         var txtuserregister : EditText = findViewById(R.id.txtUserRegister)
         var txtpassregister : EditText = findViewById(R.id.txtPassRegister)

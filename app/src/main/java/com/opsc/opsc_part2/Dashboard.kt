@@ -24,15 +24,19 @@ import com.opsc.opsc_part2.MainActivity.Companion.username
 
 class Dashboard : BaseActivity() {
 
+    //Private declarations
     private var cancellationSignal : CancellationSignal? = null
     private var isAuthenticated = false
 
+    //Biometric callbacks for fingerprint authentication
     private val authenticationCallback : BiometricPrompt.AuthenticationCallback
         get() = @RequiresApi(Build.VERSION_CODES.P)
         object : BiometricPrompt.AuthenticationCallback() {
+            //Called when authentication fails
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
                 notifyUser("Authentication Error : $errString")
             }
+            //Called when authentication succeeds
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                 notifyUser("Lockdown Successful")
                 isAuthenticated = true
@@ -44,11 +48,13 @@ class Dashboard : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
+        //Setting window flags
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
+        //Declaring variables
         val imgsettings = findViewById<ImageView>(R.id.imgSettingsDash)
         val txtwelcome = findViewById<TextView>(R.id.txtWelcome)
         val lockdown = findViewById<Button>(R.id.lockdownButton)
@@ -56,6 +62,7 @@ class Dashboard : BaseActivity() {
         val btndoors : Button = findViewById(R.id.btnDoors)
         val btnsensors : Button = findViewById(R.id.btnSensors)
 
+        //Layout inflater for authentication
         lockdown.setOnClickListener {
             val biometricPrompt = BiometricPrompt.Builder(this)
                 .setTitle("Lockdown")
@@ -92,6 +99,7 @@ class Dashboard : BaseActivity() {
 
     }
 
+    //Cancellation of fingerprint authentication
     private fun getCancellationSignal() : CancellationSignal {
         cancellationSignal = CancellationSignal()
         cancellationSignal?.setOnCancelListener {
@@ -113,10 +121,12 @@ class Dashboard : BaseActivity() {
         return packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)
     }
 
+    //Notify user method
     private fun notifyUser(message: String) {
         Toast(this).showCustomToast(message, this)
     }
 
+    //Redirect to lockdown screen
     private fun redirectToLockdown()
     {
         val int = Intent(this, Lockdown::class.java)

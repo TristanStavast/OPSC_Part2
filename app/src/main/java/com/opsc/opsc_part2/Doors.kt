@@ -16,6 +16,7 @@ class Doors : BaseActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_doors)
 
+        //Setting window flags
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS

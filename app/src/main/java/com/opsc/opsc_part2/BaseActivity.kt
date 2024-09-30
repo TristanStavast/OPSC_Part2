@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 
+
+//Creating base activity to set theme
 abstract class BaseActivity : AppCompatActivity ()
 {
     override fun onCreate(savedInstanceState: Bundle?)

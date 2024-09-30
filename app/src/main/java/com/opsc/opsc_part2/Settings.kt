@@ -23,6 +23,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class Settings : BaseActivity() {
 
+    //Companion object for notifications
     companion object {
         const val CHANNEL_ID = "local_notification_channel"
         const val NOTIFICATION_ID = 1
@@ -33,6 +34,7 @@ class Settings : BaseActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
 
+        //Seting window flags
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
@@ -73,7 +75,6 @@ class Settings : BaseActivity() {
             }
         }
 
-
         val imgHomeSense = findViewById<ImageView>(R.id.imgHomeSense)
 
         imgHomeSense.setOnClickListener {
@@ -92,6 +93,7 @@ class Settings : BaseActivity() {
 
     }
 
+    //Creating notification channel
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Local Notifications"
@@ -121,6 +123,8 @@ class Settings : BaseActivity() {
             notify(NOTIFICATION_ID, builder.build())
         }
     }
+
+    //Method to cancel the notification
     private fun cancelNotification() {
         val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.cancel(NOTIFICATION_ID)  // Cancel the notification by its ID

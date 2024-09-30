@@ -5,8 +5,10 @@ import android.content.SharedPreferences
 
 class PreferencesHelper(context: Context)
 {
+    //Shared preferences to set theme
     private val sharedPreferences : SharedPreferences = context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
 
+    //Companion object for light and dark mode
     companion object
     {
         const val THEME_KEY = "current_theme"

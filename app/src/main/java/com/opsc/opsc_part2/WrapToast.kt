@@ -15,6 +15,7 @@ fun Toast.showCustomToast(message : String, activity: Activity)
     val txtView = layout.findViewById<TextView>(R.id.toastText)
     txtView.text = message
 
+    //Applying the custom toast layout to the Toast object
     this.apply {
         setGravity(Gravity.TOP, 0, 40)
         duration = Toast.LENGTH_SHORT
