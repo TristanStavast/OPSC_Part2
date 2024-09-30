@@ -74,7 +74,7 @@ class Dashboard : BaseActivity() {
             startActivity(int)
         }
 
-        txtwelcome.setText("Welcome back, " + username)
+        txtwelcome.setText("Welcome back, " + MainActivity.username)
 
         btnlights.setOnClickListener {
             val int = Intent(this, Lights::class.java)

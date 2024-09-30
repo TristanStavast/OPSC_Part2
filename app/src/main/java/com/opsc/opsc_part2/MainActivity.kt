@@ -38,7 +38,7 @@ class MainActivity : BaseActivity() {
         val dbHS = Firebase.database
         val userList = mutableListOf<Users>()
         var SignedIn : Int = -1
-        var username : String = ""
+        var username : String? = ""
     }
 
     //Biometric authentication callback object
@@ -55,6 +55,7 @@ class MainActivity : BaseActivity() {
                 super.onAuthenticationSucceeded(result)
                 notifyUser("Login Successful")
                 isAuthenticated = true
+                username = "tristan"
                 navigateToDashboard()
             }
         }
@@ -101,6 +102,7 @@ class MainActivity : BaseActivity() {
                 {
                     //logging in the user
                     Toast(this).showCustomToast("Logged in successfully", this)
+                    username = userList[i].username
                     navigateToDashboard()
 
                     found = true
@@ -181,9 +183,7 @@ class MainActivity : BaseActivity() {
         })
     }
 
-    override fun onBackPressed() {
-
-    }
+    override fun onBackPressed() {}
 }
 
 

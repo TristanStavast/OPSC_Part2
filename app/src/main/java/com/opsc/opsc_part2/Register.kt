@@ -59,6 +59,7 @@ class Register : BaseActivity() {
                 ref4.setValue("")
 
                 Toast(this).showCustomToast("Registered successfully", this)
+                MainActivity.username = txtuserregister.text.toString()
                 val int = Intent(this, Dashboard::class.java)
                 startActivity(int)
             }
