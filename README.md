@@ -33,6 +33,9 @@ List the software and libraries needed to run this project. For example:
 - Keyestudio Smart Home Kit
 - ESP-01
 
+### Images
+You can find all the Images for this application in the Images folder in this repo.
+
 ### Installation
 
 Step-by-step instructions on how to set up the project locally:
@@ -43,7 +46,4 @@ git clone https://github.com/username/repo-name.git
 
 # Change directory into the project folder
 cd repo-name
-
-# Install dependencies (if any)
-npm install # or pip install -r requirements.txt, etc.
 
