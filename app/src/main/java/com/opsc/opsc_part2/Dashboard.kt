@@ -46,7 +46,6 @@ class Dashboard : BaseActivity() {
         val imgsettings = findViewById<ImageView>(R.id.imgSettingsDash)
         val txtwelcome = findViewById<TextView>(R.id.txtWelcome)
         val lockdown = findViewById<Button>(R.id.lockdownButton)
-        val unlockdown = findViewById<Button>(R.id.unlockdownButton)
         val btnlights : Button = findViewById(R.id.btnLights)
         val btndoors : Button = findViewById(R.id.btnDoors)
         val btnsensors : Button = findViewById(R.id.btnSensors)

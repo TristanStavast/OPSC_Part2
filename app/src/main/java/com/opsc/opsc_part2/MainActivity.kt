@@ -93,6 +93,7 @@ class MainActivity : BaseActivity() {
             var found = false
             for(i in 0 until userList.size)
             {
+
                 //error handling
                 if((txtusername.text.toString().equals(userList[i].username)) && (txtpassword.text.toString().equals(
                         userList[i].password)))
