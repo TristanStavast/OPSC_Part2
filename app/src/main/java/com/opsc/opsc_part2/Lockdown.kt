@@ -19,10 +19,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.Response
+import java.io.IOException
 
 class Lockdown : BaseActivity() {
     private var cancellationSignal : CancellationSignal? = null
     private var isAuthenticated = false
+    private val client = OkHttpClient()
 
     //Authentication callback
     private val authenticationCallback : BiometricPrompt.AuthenticationCallback
@@ -34,6 +41,7 @@ class Lockdown : BaseActivity() {
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                 notifyUser("Stopped Lockdown")
                 isAuthenticated = true
+                //lockDownOff()
                 navigatetodash()
             }
         }
@@ -41,6 +49,8 @@ class Lockdown : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lockdown)
+
+        //lockDownOn()
 
         //Setting window flags
         window.setFlags(
@@ -100,6 +110,55 @@ class Lockdown : BaseActivity() {
     }
 
     override fun onBackPressed() {}
+
+
+    // Method for lock down on
+    fun lockDownOn() {
+        val url = "http://192.168.4.2/lockdownon"
+
+        val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), "")
+        val request = Request.Builder()
+            .url(url)
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : okhttp3.Callback {
+            override fun onFailure(call: okhttp3.Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call: okhttp3.Call, response: Response) {
+                response.use {
+                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+                    println(response.body!!.string())
+                }
+            }
+        })
+    }
+
+    // Method for lock down off
+    fun lockDownOff() {
+        val url = "http://192.168.4.2/lockdownoff"
+
+        val requestBody = RequestBody.create("application/json".toMediaTypeOrNull(), "")
+        val request = Request.Builder()
+            .url(url)
+            .post(requestBody)
+            .build()
+
+        client.newCall(request).enqueue(object : okhttp3.Callback {
+            override fun onFailure(call: okhttp3.Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call: okhttp3.Call, response: Response) {
+                response.use {
+                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+                    println(response.body!!.string())
+                }
+            }
+        })
+    }
 }
 
 
