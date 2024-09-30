@@ -83,6 +83,9 @@ class Settings : BaseActivity() {
 
         val btnLogout: Button = findViewById(R.id.btnLogout)
         btnLogout.setOnClickListener {
+            MainActivity.username = ""
+            MainActivity.SignedIn = -1
+
             val int = Intent(this, MainActivity::class.java)
             startActivity(int)
         }
