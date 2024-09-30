@@ -35,6 +35,7 @@ class Dashboard : BaseActivity() {
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                 notifyUser("Lockdown Successful")
                 isAuthenticated = true
+                redirectToLockdown()
             }
         }
 
@@ -46,6 +47,9 @@ class Dashboard : BaseActivity() {
         val txtwelcome = findViewById<TextView>(R.id.txtWelcome)
         val lockdown = findViewById<Button>(R.id.lockdownButton)
         val unlockdown = findViewById<Button>(R.id.unlockdownButton)
+        val btnlights : Button = findViewById(R.id.btnLights)
+        val btndoors : Button = findViewById(R.id.btnDoors)
+        val btnsensors : Button = findViewById(R.id.btnSensors)
 
         lockdown.setOnClickListener {
             val biometricPrompt = BiometricPrompt.Builder(this)
@@ -58,11 +62,6 @@ class Dashboard : BaseActivity() {
 
             biometricPrompt.authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
 
-            lockdown.visibility = Button.INVISIBLE
-            unlockdown.visibility = Button.VISIBLE
-
-
-
         }
 
         imgsettings.setOnClickListener {
@@ -72,9 +71,7 @@ class Dashboard : BaseActivity() {
 
         txtwelcome.setText("Welcome back, " /* add user firstname from database */)
 
-        val btnlights : Button = findViewById(R.id.btnLights)
-        val btndoors : Button = findViewById(R.id.btnDoors)
-        val btnsensors : Button = findViewById(R.id.btnSensors)
+
 
         btnlights.setOnClickListener {
             val int = Intent(this, Lights::class.java)
@@ -115,6 +112,16 @@ class Dashboard : BaseActivity() {
 
     private fun notifyUser(message: String) {
         Toast(this).showCustomToast(message, this)
+    }
+
+    private fun redirectToLockdown()
+    {
+        val int = Intent(this, Lockdown::class.java)
+        startActivity(int)
+    }
+
+    override fun onBackPressed() {
+
     }
 
 }
