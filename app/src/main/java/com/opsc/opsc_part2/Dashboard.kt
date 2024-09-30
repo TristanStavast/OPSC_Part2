@@ -33,7 +33,7 @@ class Dashboard : BaseActivity() {
                 notifyUser("Authentication Error : $errString")
             }
             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
-                notifyUser("Login Successful")
+                notifyUser("Lockdown Successful")
                 isAuthenticated = true
             }
         }
@@ -44,17 +44,25 @@ class Dashboard : BaseActivity() {
 
         val imgsettings = findViewById<ImageView>(R.id.imgSettingsDash)
         val txtwelcome = findViewById<TextView>(R.id.txtWelcome)
+        val lockdown = findViewById<Button>(R.id.lockdownButton)
+        val unlockdown = findViewById<Button>(R.id.unlockdownButton)
 
-        findViewById<Button>(R.id.lockdownButton).setOnClickListener {
+        lockdown.setOnClickListener {
             val biometricPrompt = BiometricPrompt.Builder(this)
                 .setTitle("Lockdown")
                 .setSubtitle("Do you wish to lockdown the household?")
                 .setDescription("Place your finger on the fingerprint sensor")
                 .setNegativeButton("Cancel", this.mainExecutor, DialogInterface.OnClickListener { dialog, which ->
-                    notifyUser("Login Cancelled")
+                    notifyUser("Lockdown Cancelled")
                 }).build()
 
             biometricPrompt.authenticate(getCancellationSignal(), mainExecutor, authenticationCallback)
+
+            lockdown.visibility = Button.INVISIBLE
+            unlockdown.visibility = Button.VISIBLE
+
+
+
         }
 
         imgsettings.setOnClickListener {
