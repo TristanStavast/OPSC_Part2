@@ -109,9 +109,11 @@
         android:layout_marginEnd="266dp"
         android:layout_marginBottom="421dp"
         android:backgroundTint="#2158df"
+        android:cornerRadius="100dp"
         android:drawableTop="@drawable/lightbulb"
         android:text="lights"
         android:textColor="@color/black"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
