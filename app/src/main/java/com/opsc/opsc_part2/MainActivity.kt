@@ -159,6 +159,8 @@ class MainActivity : BaseActivity() {
     private fun navigateToDashboard() {
         val intent = Intent(this, Dashboard::class.java)
         startActivity(intent)
+
+
     }
 
     private fun readFromFirebase() {
