@@ -52,6 +52,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.android.gms:play-services-auth:20.5.0")
     implementation("androidx.core:core-ktx:1.12.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
 
     testImplementation(libs.junit)
