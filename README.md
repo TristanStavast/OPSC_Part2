@@ -1,49 +1,53 @@
-# HomeSense
+HomeSense
+HomeSense is an Android application designed to interface with the KS0085 Keyestudio Smart Home Kit for Arduino, allowing users to monitor and control smart home devices. Acting as a Google Home-like setup, the app enables seamless home automation through an easy-to-use interface, with built-in biometrics, Google Single Sign-On (SSO) for streamlined login, dark mode, multilingual support (English and Afrikaans), and customizable notification settings.
 
-This Android Application is a small demonstration of how a smart home application works on an Android device. HomeSense is a demonstration of the power behind a smart home application.
+Features
+1. Biometric Security & Google SSO
+Fingerprint/Face ID Login: Provides a secure and quick way to access the app, protecting your home automation controls from unauthorized use.
+Google Single Sign-On (SSO): Sign in with your Google account for a fast, secure, and convenient login experience.
+2. Device Control and Monitoring
+Gas Sensor: Monitors for gas leaks and alerts the user if dangerous levels are detected.
+Photocell: Detects ambient light and can automatically control lighting based on detected light levels.
+Fan: Can be turned on or off from the app to control airflow or for cooling purposes.
+Lights: Two controllable lights for illumination management, remotely adjustable through the app.
+Humidity Sensor: Monitors indoor humidity levels and provides real-time readings in the app.
+Buzzer: Can be activated in response to certain alerts or thresholds, such as gas detection.
 
-## Table of Contents
+4. Customization Options
+Dark Mode: Allows users to switch between light and dark themes for a comfortable user experience, particularly in low-light conditions.
+Language Support: Supports both English and Afrikaans, accommodating a wider audience.
+Notification Settings: Configure notifications for important alerts, such as gas leaks, humidity level changes, and other sensor-based events.
+Installation
+Requirements:
 
-- [About](#about)
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Images](#images)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+Android device running Android 6.0 (API level 23) or higher.
+KS0085 Keyestudio Smart Home Kit for Arduino.
+ESP8266 or similar module to enable Wi-Fi connectivity between the Arduino and the HomeSense app.
+Firebase Integration:
 
-## About
+Ensure Firebase Authentication and Realtime Database are set up to enable secure login, Google SSO, and data storage.
 
-This project is designed to display the capabilities of an Android smart home application. HomeSense makes this capable by displaying and demonstrating on a Keyestudio Smart Home Kit for Arduino. We made this application with use of API calls and connection through an ESP-01.
+Usage
+Register and Login:
+Users can register with Google SSO or traditional login methods and then log in securely using biometric authentication (Fingerprint or Face ID) if preferred.
 
-## Getting Started
+Device Control:
+Control smart devices by tapping the corresponding controls within the app, including turning lights on/off, adjusting fan settings, and monitoring sensor data.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Settings:
+Go to Settings to switch between dark and light themes, change the app language (English or Afrikaans), and customize notification preferences.
 
-### Prerequisites
+Real-Time Monitoring:
+View real-time sensor readings within the app, including gas levels, humidity, and ambient light.
 
-List the software and libraries needed to run this project. For example:
+Tech Stack
+Android Studio: Primary IDE for development.
+Kotlin: Language used for Android app development.
+Firebase: Used for user authentication, Google SSO, and real-time database for sensor data.
+Arduino: Microcontroller board used to interface with KS0085 Smart Home Kit sensors and actuators.
 
-- [Git](https://git-scm.com/)
-- Android smart phone
-- Internet connection
-- Keyestudio Smart Home Kit
-- ESP-01
+Arduino Code:
+Flash the Arduino with the provided code to read sensor values and handle commands from the app.
 
-### Images
-You can find all the Images for this application in the Images folder in this repo.
-
-### Installation
-
-Step-by-step instructions on how to set up the project locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/username/repo-name.git
-
-# Change directory into the project folder
-cd repo-name
-
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
