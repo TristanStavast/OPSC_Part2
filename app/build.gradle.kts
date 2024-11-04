@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.google.gms.google.services)
 }
 
+
 android {
     namespace = "com.opsc.opsc_part2"
     compileSdk = 34
@@ -35,7 +36,34 @@ android {
         jvmTarget = "1.8"
     }
 }
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
 
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+
+    // Firebase services (version managed by BoM)
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
+    implementation("androidx.core:core-ktx:1.12.0")
+
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("io.kotest:kotest-runner-junit5:5.0.0")
+}
+
+
+/*
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -45,9 +73,12 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
     implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("io.kotest:kotest-runner-junit5:5.0.0")
-}
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+
+}*/

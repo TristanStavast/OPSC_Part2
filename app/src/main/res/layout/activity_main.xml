@@ -80,10 +80,10 @@
         android:id="@+id/btnRegisterLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="134dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="651dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="27dp"
         android:backgroundTint="#749cff"
         android:text="@string/register_label"
         android:textColor="@color/black"
@@ -122,6 +122,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/homesense_whole_logo" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="575dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="#749cff"
+        android:text="@string/google_label"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

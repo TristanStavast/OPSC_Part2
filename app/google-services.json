@@ -1,41 +1,24 @@
 {
   "project_info": {
-    "project_number": "121458099601",
-    "firebase_url": "https://homesense-4caae-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "homesense-4caae",
-    "storage_bucket": "homesense-4caae.appspot.com"
+    "project_number": "966382746791",
+    "project_id": "opscsso",
+    "storage_bucket": "opscsso.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:121458099601:android:0763899c9e9ead307c0630",
-        "android_client_info": {
-          "package_name": "com.opsc.myapplication"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCAyjKaXxl6j1W6OJlpEDwQQmm7Nmtnhfo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:121458099601:android:efda4ea3b883a4817c0630",
+        "mobilesdk_app_id": "1:966382746791:android:a98e04a932abd767c76f82",
         "android_client_info": {
           "package_name": "com.opsc.opsc_part2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [{
+        "client_id": "289949896676-ga9hdlcaurtoa42gf0vki65q3n5fospr.apps.googleusercontent.com",
+        "client_type": 3
+      }],
       "api_key": [
         {
-          "current_key": "AIzaSyCAyjKaXxl6j1W6OJlpEDwQQmm7Nmtnhfo"
+          "current_key": "AIzaSyD7JL1a0kHec7XLjw_u83mgJydtg84ggM0"
         }
       ],
       "services": {

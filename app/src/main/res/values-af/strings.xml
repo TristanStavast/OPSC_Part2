@@ -7,7 +7,7 @@
     <string name="language_label">Taal</string>
     <string name="logout_label">Teken uit</string>
     <string name="dashboard_label">Dashbord</string>
-    <string name="welcome_back_label">Welkom terug, Alexi</string>
+    <string name="welcome_back_label">Welkom terug, tristan</string>
     <string name="lights_label">Ligte</string>
     <string name="doors_label">Deure</string>
     <string name="sensor_label">Sensor</string>
@@ -29,4 +29,7 @@
     <string name="ring_buzzer_label">Bel Klokkie</string>
     <string name="photocell_label">Fotoksel</string>
     <string name="detected_label">Gevind</string>
+    <string name="google_label">Google</string>
+    <string name="default_web_client_id">289949896676-ga9hdlcaurtoa42gf0vki65q3n5fospr.apps.googleusercontent.com
+</string>
 </resources>

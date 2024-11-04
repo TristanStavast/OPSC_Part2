@@ -7,7 +7,7 @@
     <string name="language_label">Language</string>
     <string name="logout_label">Logout</string>
     <string name="dashboard_label">Dashboard</string>
-    <string name="welcome_back_label">Welcome back, Alexi</string>
+    <string name="welcome_back_label">Welcome back, tristan</string>
     <string name="lights_label">Lights</string>
     <string name="doors_label">Doors</string>
     <string name="sensor_label">Sensor</string>
@@ -29,4 +29,6 @@
     <string name="ring_buzzer_label">Ring Buzzer</string>
     <string name="photocell_label">Photocell</string>
     <string name="detected_label">Detected</string>
-</resources>
+    <string name="google_label">Google</string>
+    <string name="default_web_client_id">289949896676-ga9hdlcaurtoa42gf0vki65q3n5fospr.apps.googleusercontent.com
+</string></resources>
