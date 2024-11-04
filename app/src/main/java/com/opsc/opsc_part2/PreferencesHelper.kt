@@ -15,8 +15,10 @@ class PreferencesHelper(context: Context)
         const val LIGHT_MODE = "light"
         const val DARK_MODE = "dark"
         const val NOTIFICATION_KEY = "notifications_enabled"
+        const val LANGUAGE_KEY = "selected_language"
     }
 
+    //Theme preferences
     fun setTheme(theme : String)
     {
         sharedPreferences.edit().putString(THEME_KEY, theme).apply()
@@ -27,6 +29,7 @@ class PreferencesHelper(context: Context)
         return sharedPreferences.getString(THEME_KEY, LIGHT_MODE)
     }
 
+    //Notification preferences
     fun setNotificationsEnabled(enabled : Boolean)
     {
         sharedPreferences.edit().putBoolean(NOTIFICATION_KEY, enabled).apply()
@@ -34,5 +37,14 @@ class PreferencesHelper(context: Context)
     fun areNotificationsEnabled() : Boolean
     {
         return sharedPreferences.getBoolean(NOTIFICATION_KEY, true)
+    }
+
+    //Language preferences
+    fun setLanguage(languageCode: String) {
+        sharedPreferences.edit().putString(LANGUAGE_KEY, languageCode).apply()
+    }
+
+    fun getLanguage(): String {
+        return sharedPreferences.getString(LANGUAGE_KEY, "en") ?: "en"
     }
 }

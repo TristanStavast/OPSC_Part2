@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="welcome_message">Welkom na HomeSense!</string>
+    <string name="settings_label">Instellings</string>
+    <string name="dark_mode_label">Donker Modus</string>
+    <string name="notifications_label">Kennisgewings</string>
+    <string name="language_label">Taal</string>
+    <string name="logout_label">Teken uit</string>
+    <string name="dashboard_label">Dashbord</string>
+    <string name="welcome_back_label">Welkom terug, Alexi</string>
+    <string name="lights_label">Ligte</string>
+    <string name="doors_label">Deure</string>
+    <string name="sensor_label">Sensor</string>
+    <string name="gas_label">Gas</string>
+    <string name="light_label">Lig</string>
+    <string name="humidity_label">Humidity</string> <!-- Assuming humidity remains the same -->
+    <string name="motion_label">Beweging</string>
+    <string name="lockdown_label">Afsluiting</string>
+    <string name="open_door_label">Maak Deur Oop</string>
+    <string name="outside_light_label">Buitelug Lig</string>
+    <string name="inside_light_label">Binne Lig</string>
+    <string name="stop_lockdown_label">Stop Afsluiting</string>
+    <string name="enter_username_label">Voer Gebruikersnaam In...</string>
+    <string name="enter_password_label">Voer Wagwoord In...</string>
+    <string name="login_label">Teken In</string>
+    <string name="fingerprint_label">Vingerafdruk</string>
+    <string name="register_label">Registreer</string>
+    <string name="confirm_password_label">Bevestig Wagwoord...</string>
+    <string name="ring_buzzer_label">Bel Klokkie</string>
+    <string name="photocell_label">Fotoksel</string>
+    <string name="detected_label">Gevind</string>
+</resources>

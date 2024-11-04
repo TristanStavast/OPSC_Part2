@@ -20,6 +20,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Locale
 
 class Settings : BaseActivity() {
 
@@ -30,6 +31,11 @@ class Settings : BaseActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val preferencesHelper = PreferencesHelper(this)
+        val currentTheme = preferencesHelper.getTheme()
+        val currentLanguage = preferencesHelper.getLanguage()
+        setLocale(currentLanguage)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
@@ -42,9 +48,6 @@ class Settings : BaseActivity() {
 
         createNotificationChannel()
         val themeSwitch: Switch = findViewById(R.id.swtchDarkMode)
-
-        val preferencesHelper = PreferencesHelper(this)
-        val currentTheme = preferencesHelper.getTheme()
 
         themeSwitch.isChecked = currentTheme == PreferencesHelper.DARK_MODE
 
@@ -74,6 +77,18 @@ class Settings : BaseActivity() {
                 cancelNotification()
             }
         }
+
+        val languageSwitch : Switch = findViewById(R.id.langSwitch)
+
+
+        languageSwitch.isChecked = currentLanguage == "af"
+        languageSwitch.setOnCheckedChangeListener { _, isChecked ->
+            val newLanguage = if (isChecked) "af" else "en"
+            preferencesHelper.setLanguage(newLanguage)
+            setLocale(newLanguage)
+            recreate()
+        }
+
 
         val imgHomeSense = findViewById<ImageView>(R.id.imgHomeSense)
 
@@ -129,4 +144,13 @@ class Settings : BaseActivity() {
         val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.cancel(NOTIFICATION_ID)  // Cancel the notification by its ID
     }
+
+    private fun setLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+        val config = resources.configuration
+        config.setLocale(locale) // This line is fine, but ensure the following
+        resources.updateConfiguration(config, resources.displayMetrics) // This might be deprecated in newer APIs
+    }
+
 }

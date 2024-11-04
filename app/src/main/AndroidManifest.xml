@@ -30,7 +30,8 @@
             android:exported="false" />
         <activity
             android:name=".Settings"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="locale|layoutDirection|screenSize|orientation" />
         <activity
             android:name=".Dashboard"
             android:exported="false" />
