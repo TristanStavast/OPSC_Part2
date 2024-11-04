@@ -1,4 +1,5 @@
 HomeSense
+
 HomeSense is an Android application designed to interface with the KS0085 Keyestudio Smart Home Kit for Arduino, allowing users to monitor and control smart home devices. Acting as a Google Home-like setup, the app enables seamless home automation through an easy-to-use interface, with built-in biometrics, Google Single Sign-On (SSO) for streamlined login, dark mode, multilingual support (English and Afrikaans), and customizable notification settings.
 
 Features
