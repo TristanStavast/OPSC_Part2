@@ -60,7 +60,7 @@ class Dashboard : BaseActivity() {
         val lockdown = findViewById<Button>(R.id.lockdownButton)
         val btnlights : Button = findViewById(R.id.btnLights)
         val btndoors : Button = findViewById(R.id.btnDoors)
-        val btnsensors : Button = findViewById(R.id.btnSensors)
+        //9val btnsensors : Button = findViewById(R.id.btnSensors)
 
         //Layout inflater for authentication
         lockdown.setOnClickListener {
@@ -91,10 +91,10 @@ class Dashboard : BaseActivity() {
             val int = Intent(this, Doors::class.java)
             startActivity(int)
         }
-        btnsensors.setOnClickListener {
+        /*btnsensors.setOnClickListener {
             val int = Intent(this, Sensors::class.java)
             startActivity(int)
-        }
+        }*/
 
 
     }
